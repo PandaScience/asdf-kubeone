@@ -6,52 +6,68 @@
 
 </div>
 
-# Contents
+## Contents
 
 - [Dependencies](#dependencies)
 - [Install](#install)
 - [Contributing](#contributing)
 - [License](#license)
 
-# Dependencies
+## Dependencies
 
 - `bash`, `curl`, `unzip`, and [POSIX utilities](https://pubs.opengroup.org/onlinepubs/9699919799/idx/utilities.html).
 
-# Install
+## Installation
 
-Plugin:
+### asdf
+
+Install with [asdf](https://github.com/asdf-vm/asdf):
 
 ```shell
-asdf plugin add kubeone
-# or
+# Add plugin
 asdf plugin add kubeone https://github.com/PandaScience/asdf-kubeone.git
-```
 
-kubeone:
-
-```shell
-# Show all installable versions
+# Show all available versions
 asdf list-all kubeone
 
 # Install specific version
 asdf install kubeone latest
 
-# Set a version globally (on your ~/.tool-versions file)
-asdf global kubeone latest
+# Set a version locally ($PWD/.tool-versions)
+asdf local kubeone latest
 
-# Now kubeone commands are available
-kubeone version
+# Set a version globally (~/.tool-versions)
+asdf global kubeone latest
 ```
 
-Check [asdf](https://github.com/asdf-vm/asdf) readme for more instructions on how to
-install & manage versions.
+See [asdf docs](https://asdf-vm.com/manage/versions.html) for full command reference.
 
-# Contributing
+### mise
+
+Install with [mise](https://mise.jdx.dev/):
+
+```shell
+# Add plugin
+mise plugin install kubeone https://github.com/PandaScience/asdf-kubeone.git
+
+# Show all available versions
+mise ls-remote kubeone
+
+# Set & install a version locally ($PWD/.mise.toml)
+mise use kubeone@latest
+
+# Set & install a version globally (~/.config/mise/config.toml)
+mise use -g kubeone@latest
+```
+
+See [mise docs](https://mise.jdx.dev/cli/#mise-use-options-tool-version) for full command reference.
+
+## Contributing
 
 Contributions of any kind welcome! See the [contributing guide](contributing.md).
 
 [Thanks goes to these contributors](https://github.com/PandaScience/asdf-kubeone/graphs/contributors)!
 
-# License
+## License
 
 See [LICENSE](LICENSE) © [René Wirnata](https://github.com/PandaScience/)
